@@ -1,6 +1,8 @@
 ## langchain-treasurehunt
 You find yourself in a dimly lit dungeon, with your torch barely providing enough light to see your immediate surroundings. The flickering flame casts eerie shadows on the damp stone walls. Your objective is clear: find the treasure hidden within this labyrinthine maze. But beware, the limited visibility adds to the challenge as you cautiously navigate through the darkness. Will you discover the treasure before your torch fades away completely? The race against time begins.
 
+![ui rendering](treasurehunt-ui.png).
+
 ## Start game
 
 `docker compose up -d`
