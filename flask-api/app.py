@@ -124,8 +124,7 @@ def move_player(state, new_x, new_y):
         state.player_y = new_y
         response = get_game_state(state)
     else:
-        response = get_game_state(state)
-        response['message'] = 'Invalid move'
+        response = {'message': 'Invalid move'}
     
     return response
 
@@ -134,8 +133,7 @@ def pick_up_treasure(state):
     if state.grid[state.player_y][state.player_x] == 'T':
         response = {'message': 'Treasure picked up!'}
     else:
-        response = get_game_state(state)
-        response['message'] = 'No treasure at the current location'
+        response = {'message': 'No treasure at the current location'}
     
     return response
 
