@@ -17,6 +17,14 @@ It will just show a list of buttons, that's fine.
 
 - Hint: Copy-paste `.env.sample` to `.env` and add your OpenAPI key 
 
+### Python
+
+1. `cd actor`
+2. `poetry install` (Using Poetry (version 1.4.2))
+3. `poetry run python main.py`
+
+###  Jupyter
+
 1. `poetry install` (Using Poetry (version 1.4.2))
 2. `poetry run jupyter notebook`
 3. Open `langchain_treasurehunt.ipynb`
