@@ -1,5 +1,4 @@
-from agents import hunter_agent
-from third_parties import apidocs
+from agents import main_agent
 from dotenv import load_dotenv
 import os
 import openai
@@ -10,8 +9,9 @@ openai.api_key = api_key
 
 
 def run():
-    api_docs = apidocs.get_docs()
-    result = hunter_agent.hunt_for_treasure(api_docs)
+    # api_docs = apidocs.get_docs()
+    # result = hunter_agent.hunt_for_treasure(api_docs)
+    result = main_agent.run_main_agent()
     print(result)
 
 
