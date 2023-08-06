@@ -1,4 +1,4 @@
-from actor.agents import hunter_agent
+from actor.agents import hunter_agent, main_agent
 from dotenv import load_dotenv
 import os
 import openai
