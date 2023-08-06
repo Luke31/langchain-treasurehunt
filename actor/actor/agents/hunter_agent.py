@@ -6,7 +6,7 @@ from langchain.chat_models import ChatOpenAI
 
 def hunt_for_treasure(api_docs: str) -> str:
     # model="text-curie-001"
-    model = "gpt-3.5-turbo"
+    model = "gpt-4"
     llm = ChatOpenAI(model_name=model, temperature=0)
     tools = load_tools(["requests_all"])
 
