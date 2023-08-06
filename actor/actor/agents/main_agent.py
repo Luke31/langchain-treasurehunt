@@ -4,26 +4,21 @@ from langchain.tools import Tool
 
 from actor.agents.rest_agent import run_rest_agent
 
-model_main_agent = "gpt-3.5-turbo"
+model_main_agent = "gpt-4"
 model_rest_agent = "gpt-3.5-turbo"
 
 
 def run_main_agent() -> str:
     prefix = f"""
+        Pretend you are a person playing a game.
         You are on a 2D-grid and can see on the current and directly to adjacent cells.
         Goal of the game: You need to find and pick up the treasure. You also know the distance to the treasure.
-        Goal of agent: Send commands to reach the goal. Rephrase the previous response in natural words before taking the next action.
-        Determine each command based on the previous response for the current given situation while considering the past taken steps.
-        Stop when you have reached the treasure.
+        
+        Your actions: Send commands to reach the goal.
 
         Rules of the game:
         - Cell descriptions: W=wall, G=ground, T=treasure
         - Available commands (choose freely): START UP DOWN LEFT RIGHT PICK_UP
-        - You can only pick up the treasure if the current cell has the treasure on it and is not a ground.
-        - Do NOT attempt to pick up the treasure if it's in an adjacent cell. Wait until you have reached it.
-        - Do NOT walk towards adjacent cells with walls. Wall-cells are marked by the letter 'W'.
-        - Do NOT start the game again until you have found the treasure.
-        - The previous observation already contains the current adjacent cells.
         """
     agent = initialize_agent(
         tools=[
