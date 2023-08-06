@@ -2,7 +2,7 @@ from langchain.agents import AgentType, initialize_agent
 from langchain.chat_models import ChatOpenAI
 from langchain.tools import Tool
 
-from agents.rest_agent import run_rest_agent
+from actor.agents.rest_agent import run_rest_agent
 
 model_main_agent = "gpt-3.5-turbo"
 model_rest_agent = "gpt-3.5-turbo"

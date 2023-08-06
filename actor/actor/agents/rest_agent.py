@@ -3,7 +3,7 @@ from langchain.agents import AgentType
 from langchain.agents import load_tools
 from langchain.chat_models import ChatOpenAI
 
-from third_parties import apidocs
+from actor.third_parties import apidocs
 
 
 def run_rest_agent(command:str) -> AgentExecutor:

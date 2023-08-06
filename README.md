@@ -21,7 +21,7 @@ It will just show a list of buttons, that's fine.
 
 1. `cd actor`
 2. `poetry install` (Using Poetry (version 1.4.2))
-3. `poetry run python main.py`
+3. `poetry run main`
 
 ###  Jupyter
 

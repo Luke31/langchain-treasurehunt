@@ -1,4 +1,4 @@
-from agents import main_agent
+from actor.agents import main_agent
 from dotenv import load_dotenv
 import os
 import openai
