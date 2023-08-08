@@ -1,13 +1,12 @@
 from langchain.agents import initialize_agent
 from langchain.agents import AgentType
 from langchain.agents import load_tools
+from langchain.callbacks import StreamlitCallbackHandler
 from langchain.chat_models import ChatOpenAI
 
 
-def hunt_for_treasure(api_docs: str) -> str:
-    # model="text-curie-001"
-    model = "gpt-4"
-    llm = ChatOpenAI(model_name=model, temperature=0)
+def hunt_for_treasure(api_docs: str, st_callback: StreamlitCallbackHandler, model="gpt-4") -> str:
+    llm = ChatOpenAI(model_name=model, temperature=0, streaming=True)
     tools = load_tools(["requests_all"])
 
     prefix = f"""
@@ -30,12 +29,11 @@ def hunt_for_treasure(api_docs: str) -> str:
     - Solve the game step-by-step.
     - Don't repeat the same invalid moves.
     """
-    print(prefix)
     agent = initialize_agent(tools,
                              llm,
                              agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
                              verbose=True,
                              max_execution_time=90,
                              max_iterations=30)
-    result = agent.run(prefix + "\nStart the game and find the treasure")
+    result = agent.run(prefix + "\nStart the game and find the treasure", callbacks=[st_callback])
     return result
