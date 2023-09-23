@@ -13,7 +13,7 @@ main = "actor.main:main"
 python = "^3.11"
 numpy = "^1.25.1"
 openai = "^0.27.8"
-langchain = "^0.0.251"
+langchain = "0.0.300"
 python-dotenv = "^1.0.0"
 streamlit = "^1.25.0"
 
