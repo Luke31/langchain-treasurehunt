@@ -31,6 +31,7 @@ def run_main_agent() -> str:
         ],
         llm=ChatOpenAI(temperature=0, model=model_main_agent),
         agent_type=AgentType.OPENAI_FUNCTIONS,
+        handle_parsing_errors=True,
         verbose=True,
     )
     return agent.run(prefix + "\nStart the game and find the treasure")

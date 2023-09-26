@@ -32,6 +32,7 @@ def hunt_for_treasure(api_docs: str, st_callback: StreamlitCallbackHandler, mode
     agent = initialize_agent(tools,
                              llm,
                              agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+                             handle_parsing_errors=True,
                              verbose=True,
                              max_execution_time=90,
                              max_iterations=30)

@@ -22,7 +22,7 @@ It will just show a list of buttons, that's fine.
 
 1. `cd actor`
 2. `poetry install` (Using Poetry (version 1.4.2))
-3. `poetry run streamlit run stmain.py` or `poetry run main`
+3. `poetry run streamlit run app.py` or `poetry run main`
 
 ###  Jupyter
 

@@ -31,6 +31,7 @@ def run_rest_agent(command:str) -> AgentExecutor:
     agent = initialize_agent(tools,
                              llm,
                              agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+                             handle_parsing_errors=True,
                              verbose=True,
                              max_execution_time=90,
                              max_iterations=30)
